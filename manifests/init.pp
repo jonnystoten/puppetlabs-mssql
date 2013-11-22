@@ -60,8 +60,7 @@ class mssql (
   ->
   exec { 'install_mssql2008':
     command   => "E:\\setup.exe /Action=Install /IACCEPTSQLSERVERLICENSETERMS /QS /CONFIGURATIONFILE=C:\\sql2008install.ini /SQLSVCPASSWORD=\"${sqlsvcpassword}\" /AGTSVCPASSWORD=\"${agtsvcpassword}\" /ASSVCPASSWORD=\"${assvcpassword}\" /RSSVCPASSWORD=\"${rssvcpassword}\"",
-    cwd       => $media,
-    path      => $media,
+    cwd       => "E:\\",
     logoutput => true,
     creates   => $instancedir,
     timeout   => 1200,
