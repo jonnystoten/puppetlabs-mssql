@@ -54,7 +54,8 @@ class mssql (
   }
   ->
   exec { 'mount SQl Server ISO':
-    command  => 'Mount-DiskImage C:\\sqlserver.iso',
+    command  => 'Mount-DiskImage C:\\sqlserver.iso; New-Item -ItemType file C:\\mounted_sqlserver.txt',
+    creates  => "C:\\mounted_sqlserver.txt",
     provider => powershell
   }
   ->
